@@ -29,7 +29,6 @@ public class EmployerController {
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
-
     @PostMapping("add")
     public String processAddEmployerForm(@ModelAttribute @Valid Employer newEmployer,
                                     Errors errors, Model model) {
