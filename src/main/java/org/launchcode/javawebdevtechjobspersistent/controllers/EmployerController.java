@@ -23,7 +23,6 @@ public class EmployerController {
         model.addAttribute(new Employer());
         return "employers/add";
     }
-
     @GetMapping("")
     public String displayEmployer(Model model) {
         model.addAttribute("employers", employerRepository.findAll());
@@ -38,7 +37,6 @@ public class EmployerController {
         employerRepository.save(newEmployer);
         return "redirect:";
     }
-
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
         Optional <Employer> optEmployer = employerRepository.findById(employerId);
